@@ -1,3 +1,6 @@
 <resources>
     <string name="app_name">PushUpCounter</string>
+    <string name="txt_welcome">Welcome Back !!</string>
+    <string name="txt_username">Adrian Chiran</string>
+    <string name="txt_how_many">How Many Pushup Do You Want to do Today ?</string>
 </resources>
