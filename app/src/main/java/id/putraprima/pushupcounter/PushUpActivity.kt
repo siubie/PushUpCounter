@@ -2,23 +2,22 @@ package id.putraprima.pushupcounter
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.TextView
-import android.widget.Toast
-import androidx.constraintlayout.widget.ConstraintLayout
+import androidx.databinding.DataBindingUtil
+import id.putraprima.pushupcounter.databinding.ActivityPushUpBinding
 
 class PushUpActivity : AppCompatActivity() {
-    var counter:Int = 0;
+    private var counter: Int = 0;
+    lateinit var binding: ActivityPushUpBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_push_up)
-        val container = findViewById<ConstraintLayout>(R.id.container_pushup_counter)
-        val textCounter=findViewById<TextView>(R.id.text_pushup_count)
-        textCounter.text = "0"
-        container.setOnClickListener {
-            counter += 1
-            textCounter.text = counter.toString()
+        binding = DataBindingUtil.setContentView(this, R.layout.activity_push_up)
+        binding.apply {
+           textPushupCount.text = "0"
+            containerPushupCounter.setOnClickListener {
+                counter +=1
+                textPushupCount.text = counter.toString()
+            }
         }
-
     }
 
 }
