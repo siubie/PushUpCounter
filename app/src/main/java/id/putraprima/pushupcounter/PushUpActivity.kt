@@ -12,9 +12,9 @@ class PushUpActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_push_up)
         binding.apply {
-           textPushupCount.text = "0"
+            textPushupCount.text = "0"
             containerPushupCounter.setOnClickListener {
-                counter +=1
+                counter += 1
                 textPushupCount.text = counter.toString()
             }
         }
